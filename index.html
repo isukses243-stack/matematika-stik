@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KREASI STIK PINTAR - Soal Cerita Penjumlahan Kelas 2, Bahasa Indonesia & STEAM Tempat Pensil</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#FF6B6B">
+  
+  <!-- Google Fonts: Fredoka & Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Three.js & OrbitControls via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  
+  <!-- Canvas Confetti via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col selection:bg-amber-200">
+
+  <!-- TOP HEADER / NAV BAR -->
+  <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b-2 border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between flex-wrap gap-3">
+      
+      <!-- Brand & Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 via-rose-500 to-indigo-600 flex items-center justify-center text-white text-2xl shadow-md transform hover:rotate-6 transition">
+          🪵
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-black text-gray-800 tracking-tight flex items-center gap-2">
+            KREASI STIK PINTAR
+            <span class="bg-rose-100 text-rose-600 text-xs font-black px-2.5 py-0.5 rounded-full uppercase border border-rose-300">
+              Kelas 2 SD
+            </span>
+          </h1>
+          <p class="text-xs text-gray-500 font-semibold hidden sm:block">
+            Bersama Ms. Indah, S.Pd. & Ms. Tammy • Soal Cerita Penjumlahan • Literasi Bahasa Indonesia • STEAM
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Audio, Score & Mode Controls -->
+      <div class="flex items-center gap-2">
+        <div class="bg-amber-50 border border-amber-300 px-3 py-1.5 rounded-xl flex items-center gap-1.5 text-xs font-extrabold text-amber-800 shadow-sm">
+          <span>⭐</span>
+          <span>Bintang: <strong id="global-stars-badge" class="text-amber-600 text-sm">0</strong></span>
+        </div>
+        <button id="btn-toggle-mute" class="text-xs sm:text-sm font-bold px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-gray-700 transition flex items-center gap-1.5 shadow-sm">
+          🔊 Suara
+        </button>
+        <button id="btn-toggle-bgm" class="text-xs sm:text-sm font-bold px-3.5 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 transition flex items-center gap-1.5 shadow-sm">
+          🎵 Musik
+        </button>
+        <button onclick="document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()" class="hidden md:flex text-xs sm:text-sm font-bold px-3.5 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 transition items-center gap-1.5 shadow-sm" title="Mode Layar Penuh">
+          📺 Layar Penuh
+        </button>
+      </div>
+
+    </div>
+
+    <!-- TAB NAVIGATION BAR -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-1 pb-2 flex gap-2 overflow-x-auto no-scrollbar">
+      <button class="nav-tab-btn active" data-tab="tab-story">
+        <span>📖</span> Petualangan Soal Cerita
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-coop">
+        <span>🛒</span> Toko Koperasi Cilik (Game Seru)
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-ifp">
+        <span>🎮</span> IFP Games Layar Sentuh
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-3d">
+        <span>🎨</span> Studio 3D & Galeri STEAM
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-math">
+        <span>🧮</span> Laboratorium Nilai Tempat
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-kka">
+        <span>🤖</span> KKA Koding & Prosedur
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-teacher">
+        <span>👩‍🏫</span> Ruang Guru, LKPD & Sertifikat
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex-1 w-full">
+
+    <!-- =========================================================================
+         TAB 1: PETUALANGAN SOAL CERITA (DEEP LEARNING: MATEMATIKA + B. INDONESIA + STEAM)
+         ========================================================================= -->
+    <section id="tab-story" class="tab-content-panel space-y-6">
+      
+      <!-- Banner Petualangan Cerita -->
+      <div class="bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 rounded-3xl p-6 text-white shadow-lg relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl">
+          <span class="bg-white/20 backdrop-blur-md text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+            Pembelajaran Mendalam (Deep Learning) Fase A
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black font-heading mt-2">
+            Petualangan Siti & Beni: Misi Membuat Tempat Pensil Stik Es Krim
+          </h2>
+          <p class="text-sm sm:text-base text-rose-50 font-medium mt-1">
+            Bantu Siti & Beni memecahkan masalah penjumlahan stik es krim melalui 3 langkah belajar berkesadaran: <strong>(1) Mindful Reading</strong>, <strong>(2) Meja Kerja Manipulatif</strong>, dan <strong>(3) Kesimpulan Matematika & Refleksi</strong>!
+          </p>
+        </div>
+      </div>
+
+      <!-- Pemilih Babak Cerita (5 Babak Bertingkat) -->
+      <div class="card-kid p-4 bg-white">
+        <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+          <span class="text-xs font-black uppercase text-gray-500 tracking-wider flex items-center gap-1.5">
+            <span>🗺️</span> Pilih Babak Petualangan:
+          </span>
+          <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-200">
+            Selesaikan tiap babak untuk membuka bintang emas!
+          </span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="story-chapter-tabs">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+
+      <!-- KARTU DIALOG KARAKTER & CERITA AKTIF -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Kolom Kiri: Dialog & Ringkasan Babak (4 Kolom) -->
+        <div class="lg:col-span-4 space-y-4">
+          
+          <!-- Avatar Karakter & Bubble Percakapan -->
+          <div class="card-kid p-5 bg-white space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center text-3xl shadow-sm" id="story-char-avatar">
+                👧
+              </div>
+              <div>
+                <h4 class="font-black text-gray-800 text-base font-heading" id="story-char-name">Siti</h4>
+                <span class="text-xs text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200" id="story-chapter-theme">
+                  Persiapan Bahan
+                </span>
+              </div>
+            </div>
+
+            <!-- Balon Kata -->
+            <div class="speech-bubble p-4 text-xs sm:text-sm text-gray-700 leading-relaxed font-semibold">
+              <p id="story-char-dialogue">
+                "Meja belajar kita berantakan, Beni! Banyak pensil berserakan. Ayo kita buat tempat pensil dari stik es krim daur ulang!"
+              </p>
+            </div>
+
+            <!-- Kartu Wawasan STEAM -->
+            <div class="p-4 bg-indigo-50/70 rounded-2xl border-2 border-indigo-200 space-y-1.5">
+              <span class="text-[10px] font-black uppercase tracking-wider text-indigo-800 bg-white px-2 py-0.5 rounded shadow-xs" id="story-steam-pillar">
+                Sains & Rekayasa
+              </span>
+              <p class="text-xs text-indigo-950 font-medium leading-relaxed" id="story-steam-text">
+                Stik kayu es krim terbuat dari kayu alami yang ringan namun kuat. Jika disatukan dengan pola bersilang dan dilem rapi, kekuatannya bertambah kokoh!
+              </p>
+            </div>
+          </div>
+
+          <!-- Kamus Kosakata STEAM & Bahasa Indonesia -->
+          <div class="card-kid p-5 bg-white space-y-3">
+            <h4 class="font-extrabold text-sm text-gray-800 font-heading flex items-center gap-2">
+              <span>📚</span> Kamus Kata Cilik STEAM
+            </h4>
+            <div id="story-vocab-container" class="space-y-2">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Kolom Kanan: 3 Langkah Deep Learning (8 Kolom) -->
+        <div class="lg:col-span-8 card-kid p-6 bg-white space-y-6">
+          
+          <!-- Indikator 3 Langkah Deep Learning -->
+          <div class="flex items-center justify-between border-b border-gray-100 pb-4 flex-wrap gap-2">
+            <div>
+              <span class="text-xs font-black uppercase text-indigo-600 tracking-wider block" id="story-chapter-title-badge">Babak 1</span>
+              <h3 class="text-xl sm:text-2xl font-black text-gray-800 font-heading mt-0.5" id="story-chapter-title">Misi Mengumpulkan Stik</h3>
+            </div>
+
+            <!-- Tombol Navigasi 3 Langkah -->
+            <div class="flex items-center gap-1.5 bg-slate-100 p-1.5 rounded-2xl">
+              <button class="step-nav-btn active px-3 py-1.5 rounded-xl text-xs font-black transition" data-step="1">
+                1. Baca & Kata Kunci
+              </button>
+              <button class="step-nav-btn px-3 py-1.5 rounded-xl text-xs font-black text-gray-500 transition" data-step="2">
+                2. Meja Manipulatif
+              </button>
+              <button class="step-nav-btn px-3 py-1.5 rounded-xl text-xs font-black text-gray-500 transition" data-step="3">
+                3. Hitung & Refleksi
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= SUB-STEP 1: MINDFUL READING ================= -->
+          <div id="substep-panel-1" class="space-y-5">
+            <!-- Kotak Teks Soal Cerita Utama -->
+            <div class="p-5 bg-amber-50/60 rounded-3xl border-2 border-amber-300 space-y-3">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <span class="text-xs font-black uppercase tracking-wider text-amber-900 bg-amber-200/80 px-3 py-1 rounded-full">
+                  📖 Teks Soal Cerita Penjumlahan:
+                </span>
+                <div class="flex items-center gap-2">
+                  <button id="btn-story-read-aloud" class="btn-fun bg-white hover:bg-slate-50 text-indigo-700 text-xs font-black px-3 py-1.5 rounded-xl border border-indigo-200 flex items-center gap-1.5">
+                    🔊 Bantu Baca (Suara)
+                  </button>
+                  <button id="btn-toggle-keywords" class="btn-fun bg-amber-400 hover:bg-amber-500 text-amber-950 text-xs font-black px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+                    ✨ Sorot Kata Kunci
+                  </button>
+                </div>
+              </div>
+
+              <!-- Isi Paragraf Cerita -->
+              <p id="story-main-paragraph" class="text-sm sm:text-base font-bold text-gray-800 leading-relaxed pt-1">
+                <!-- Loaded dynamically -->
+              </p>
+            </div>
+
+            <!-- Analisis Kata Kunci: Diketahui & Ditanyakan -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 bg-amber-50/80 rounded-2xl border-2 border-amber-200 space-y-1.5">
+                <span class="text-xs font-black uppercase text-amber-800 flex items-center gap-1.5">
+                  <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                  Informasi yang Diketahui:
+                </span>
+                <p id="story-known-display" class="text-xs sm:text-sm font-semibold text-gray-700 leading-relaxed">
+                  <!-- Loaded via JS -->
+                </p>
+              </div>
+
+              <div class="p-4 bg-sky-50/80 rounded-2xl border-2 border-sky-200 space-y-1.5">
+                <span class="text-xs font-black uppercase text-sky-800 flex items-center gap-1.5">
+                  <span class="w-3 h-3 rounded-full bg-sky-500 inline-block"></span>
+                  Hal yang Ditanyakan:
+                </span>
+                <p id="story-ask-display" class="text-xs sm:text-sm font-semibold text-gray-700 leading-relaxed">
+                  <!-- Loaded via JS -->
+                </p>
+              </div>
+            </div>
+
+            <!-- Tombol Lanjut ke Step 2 -->
+            <div class="pt-2 flex justify-end">
+              <button id="btn-go-step-2" class="btn-fun btn-primary px-6 py-3.5 rounded-2xl font-black text-sm flex items-center gap-2">
+                Buka Meja Kerja Manipulatif Stik ➔
+              </button>
+            </div>
+          </div>
+
+
+          <!-- ================= SUB-STEP 2: MEANINGFUL MANIPULATIVE ================= -->
+          <div id="substep-panel-2" class="hidden space-y-5">
+            <div class="workbench-mat p-5 sm:p-6 space-y-5">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🪵</span>
+                  <div>
+                    <h4 class="font-black text-amber-950 text-base font-heading">Meja Kerja Manipulatif Stik Es Krim</h4>
+                    <p class="text-xs text-amber-800 font-medium">Buktikan penjumlahan secara nyata dengan menggabungkan stik!</p>
+                  </div>
+                </div>
+                <button id="btn-reset-workbench" class="text-xs font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 px-3 py-1.5 rounded-xl border border-amber-300">
+                  🔄 Tata Ulang Stik
+                </button>
+              </div>
+
+              <!-- Wadah Stik A & Wadah Stik B -->
+              <div class="grid grid-cols-1 md:grid-cols-11 gap-3 items-center">
+                <!-- Wadah A -->
+                <div class="md:col-span-5 stick-basket-box p-4 text-center space-y-2">
+                  <span class="text-xs font-black uppercase text-indigo-700" id="workbench-label-a">Stik Siti (Kelompok A)</span>
+                  <div class="text-2xl font-black text-indigo-600" id="workbench-val-a">10</div>
+                  <div id="workbench-sticks-a" class="min-h-[80px] p-2 bg-slate-50 rounded-xl flex flex-wrap gap-1 items-center justify-center">
+                    <!-- Sticks rendered via JS -->
+                  </div>
+                </div>
+
+                <!-- Simbol Tambah -->
+                <div class="md:col-span-1 text-center font-black text-3xl text-amber-600">
+                  ➕
+                </div>
+
+                <!-- Wadah B -->
+                <div class="md:col-span-5 stick-basket-box p-4 text-center space-y-2">
+                  <span class="text-xs font-black uppercase text-rose-700" id="workbench-label-b">Stik Beni (Kelompok B)</span>
+                  <div class="text-2xl font-black text-rose-600" id="workbench-val-b">10</div>
+                  <div id="workbench-sticks-b" class="min-h-[80px] p-2 bg-slate-50 rounded-xl flex flex-wrap gap-1 items-center justify-center">
+                    <!-- Sticks rendered via JS -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tombol Gabungkan Stik -->
+              <div class="text-center pt-2">
+                <button id="btn-merge-sticks" class="btn-fun btn-accent px-6 py-3.5 rounded-2xl font-black text-base shadow-md">
+                  ✨ Satukan Stik ke Wadah Gabungan!
+                </button>
+              </div>
+
+              <!-- Wadah Hasil Penggabungan -->
+              <div id="workbench-merged-box" class="p-4 bg-white/90 rounded-2xl border-2 border-emerald-400 space-y-2 text-center transition">
+                <span class="text-xs font-black uppercase text-emerald-800 tracking-wider">Hasil Penggabungan Seluruh Stik:</span>
+                <div class="text-4xl font-black text-emerald-600 my-1" id="workbench-merged-total">0 Stik</div>
+                <p class="text-xs font-bold text-gray-700" id="workbench-merged-explanation">
+                  Klik tombol "Satukan Stik" di atas untuk melihat ikatan puluhan!
+                </p>
+                <div id="workbench-sticks-merged" class="min-h-[70px] p-2 flex flex-wrap gap-2 items-center justify-center"></div>
+              </div>
+            </div>
+
+            <!-- Tombol Navigasi Bawah -->
+            <div class="flex justify-between items-center pt-2">
+              <button id="btn-back-step-1" class="text-xs font-bold text-gray-500 hover:text-gray-800 px-4 py-2">
+                ⬅ Kembali ke Bacaan
+              </button>
+              <button id="btn-go-step-3" class="btn-fun btn-primary px-6 py-3.5 rounded-2xl font-black text-sm flex items-center gap-2">
+                Tuliskan Kalimat Matematika ➔
+              </button>
+            </div>
+          </div>
+
+
+          <!-- ================= SUB-STEP 3: JOYFUL CONCLUSION ================= -->
+          <div id="substep-panel-3" class="hidden space-y-5">
+            
+            <!-- Kalimat Matematika Display -->
+            <div class="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl border-2 border-indigo-200 text-center space-y-3">
+              <span class="text-xs font-black uppercase text-indigo-700 tracking-wider bg-white px-3 py-1 rounded-full border border-indigo-200">
+                Langkah 3: Kalimat Matematika
+              </span>
+              <div class="text-3xl sm:text-4xl font-black text-indigo-900 my-2 font-heading" id="story-math-equation-display">
+                10 + 10 = <span class="text-amber-500 underline decoration-wavy">?</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-600 font-semibold" id="story-math-instruction">
+                Pilih jawaban yang paling tepat berdasarkan hasil stik yang telah kamu buktikan di meja kerja:
+              </p>
+
+              <!-- Pilihan Jawaban Opsi Ceria -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 max-w-lg mx-auto" id="story-quiz-options">
+                <!-- Rendered via JS -->
+              </div>
+
+              <!-- Feedback Box Interaktif -->
+              <div id="story-answer-feedback" class="hidden my-3 p-4 rounded-2xl text-sm font-bold"></div>
+            </div>
+
+            <!-- Refleksi Karakter & Makna Pembelajaran -->
+            <div class="p-5 bg-rose-50/70 rounded-3xl border-2 border-rose-200 space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🌱</span>
+                <div>
+                  <h4 class="font-black text-rose-950 text-sm font-heading">Refleksi Karakter (Profil Pelajar Pancasila)</h4>
+                  <p class="text-xs text-rose-800 font-medium" id="story-reflection-q">
+                    Mengapa kita sebaiknya memanfaatkan bahan daur ulang seperti stik es krim?
+                  </p>
+                </div>
+              </div>
+              <div class="p-3 bg-white/90 rounded-2xl border border-rose-200 text-xs font-bold text-gray-700" id="story-reflection-a">
+                Agar lingkungan tetap bersih dan kita belajar kreatif berhemat bahan baru!
+              </div>
+            </div>
+
+            <!-- Tombol Lanjut Babak / Selesai -->
+            <div class="flex justify-between items-center pt-2">
+              <button id="btn-back-step-2" class="text-xs font-bold text-gray-500 hover:text-gray-800 px-4 py-2">
+                ⬅ Kembali ke Meja Kerja
+              </button>
+              <button id="btn-next-chapter-action" class="btn-fun btn-success px-6 py-3.5 rounded-2xl font-black text-sm flex items-center gap-2">
+                Lanjut ke Babak Berikutnya 🌟
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TAB BARU: TOKO KOPERASI CILIK (GAME SERU BELANJA STEAM & KASIR CILIK)
+         ========================================================================= -->
+    <section id="tab-coop" class="tab-content-panel hidden space-y-6">
+      
+      <!-- Banner Koperasi Sekolah -->
+      <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-700 rounded-3xl p-6 text-white shadow-lg relative overflow-hidden">
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 max-w-2xl">
+            <div class="flex items-center gap-2">
+              <span class="bg-amber-400 text-amber-950 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                Kolaborasi Koperasi Sekolah • Games Seru
+              </span>
+              <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">
+                Kelas 2 SD (Fase A)
+              </span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black font-heading text-white">
+              🏪 Toko Koperasi Cilik: Petualangan Belanja & Kasir Cilik
+            </h2>
+            <p class="text-xs sm:text-sm text-emerald-100 font-medium leading-relaxed">
+              Bantu Ms. Tammy mengelola bahan kerajinan tempat pensil! Belanja paket stik es krim untuk proyek STEAM atau jadilah kasir cilik yang cermat menghitung pesanan teman-teman!
+            </p>
+          </div>
+
+          <!-- Mode Switcher Tabs -->
+          <div class="bg-white/10 backdrop-blur-md p-1.5 rounded-2xl border border-white/20 flex gap-2 shrink-0">
+            <button id="btn-game-mode-shop" onclick="window.coopGame.setMode('shopping')" class="btn-fun px-5 py-2.5 rounded-2xl font-black text-xs sm:text-sm bg-amber-500 text-white shadow-md border-2 border-amber-600 flex items-center gap-2">
+              <span>🛒</span>
+              <span>Mode 1: Belanja Bahan STEAM</span>
+            </button>
+            <button id="btn-game-mode-cashier" onclick="window.coopGame.setMode('cashier')" class="btn-fun px-5 py-2.5 rounded-2xl font-black text-xs sm:text-sm bg-white text-gray-700 hover:bg-slate-100 border-2 border-slate-200 flex items-center gap-2">
+              <span>🔔</span>
+              <span>Mode 2: Kasir Cilik Koperasi</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MODE 1: BELANJA BAHAN STEAM ================= -->
+      <div id="game-panel-shopping" class="space-y-6">
+        
+        <!-- Level Selector Tabs -->
+        <div class="card-kid p-4 bg-white">
+          <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+            <span class="text-xs font-black uppercase text-gray-500 tracking-wider flex items-center gap-1.5">
+              <span>🗺️</span> Pilih Misi Belanja Bahan (Level 1 - 5):
+            </span>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
+              Setiap transaksi sukses bernilai +3 Bintang ⭐
+            </span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="shop-level-tabs">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Layout Toko Koperasi & Keranjang Belanja -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Kolom Kiri (7 Kolom): Etalase Toko Ms. Tammy & Soal Cerita -->
+          <div class="lg:col-span-7 space-y-5">
+            
+            <!-- Kartu Interaksi Ms. Tammy & Soal Cerita Belanja -->
+            <div class="card-kid p-5 bg-white space-y-4">
+              <div class="flex items-center justify-between flex-wrap gap-3 pb-3 border-b border-gray-100">
+                <div class="flex items-center gap-3">
+                  <div class="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-amber-300 p-1 shrink-0 shadow-sm flex items-center justify-center overflow-hidden">
+                    <img src="assets/img/ms-tammy.svg" alt="Ms. Tammy Penjaga Koperasi" class="w-full h-full object-contain">
+                  </div>
+                  <div>
+                    <h3 class="font-black text-gray-800 text-base font-heading flex items-center gap-1.5">
+                      Ms. Tammy
+                      <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2 py-0.5 rounded-full border border-emerald-300">
+                        Penjaga Koperasi Sekolah
+                      </span>
+                    </h3>
+                    <p class="text-xs text-gray-500 font-semibold" id="shop-mission-title">Level 1: Misi Beli Stik Puluhan</p>
+                  </div>
+                </div>
+
+                <button onclick="window.coopGame.readShoppingMission()" class="btn-fun bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-black px-3.5 py-2 rounded-xl border border-indigo-200 flex items-center gap-1.5">
+                  🔊 Bantu Baca Soal
+                </button>
+              </div>
+
+              <!-- Balon Cerita Soal Belanja -->
+              <div class="p-4 bg-amber-50/80 rounded-2xl border-2 border-amber-300 space-y-2">
+                <div class="flex items-center gap-2 text-xs font-black text-amber-900 uppercase">
+                  <span>📖</span>
+                  <span>Soal Cerita Belanja:</span>
+                </div>
+                <p id="shop-mission-story" class="text-sm sm:text-base font-bold text-gray-800 leading-relaxed">
+                  <!-- Loaded via JS -->
+                </p>
+              </div>
+
+              <!-- Gambar Toko Koperasi Ceria -->
+              <div class="w-full h-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-slate-200 bg-slate-50 relative shadow-inner">
+                <img src="assets/img/koperasi.svg" alt="Toko Koperasi Sekolah" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <!-- Rak Etalase Barang Koperasi (Tombol Ambil Barang) -->
+            <div class="card-kid p-5 bg-white space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="font-extrabold text-sm text-gray-800 font-heading flex items-center gap-2">
+                  <span>🛍️</span> Rak Etalase Toko Koperasi (Klik untuk Masukkan ke Keranjang):
+                </h4>
+                <button onclick="window.coopGame.resetCart()" class="text-xs font-bold text-rose-600 hover:text-rose-800 bg-rose-50 px-2.5 py-1 rounded-lg border border-rose-200">
+                  🔄 Kosongkan
+                </button>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                
+                <!-- Item 1: Ikat Stik Puluhan (10 stik) -->
+                <div class="shop-shelf-item p-3 text-center space-y-2">
+                  <div class="w-12 h-12 mx-auto rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-2xl shadow-xs">
+                    📦
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-black text-gray-800">Ikat Stik Puluhan</h5>
+                    <span class="text-[10px] font-extrabold text-red-600 bg-red-50 px-1.5 py-0.5 rounded border border-red-200 inline-block mt-0.5">
+                      10 Stik Kayu
+                    </span>
+                  </div>
+                  <div class="flex items-center justify-center gap-1.5 pt-1">
+                    <button onclick="window.coopGame.removeFromCart('bundle10')" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-gray-700 font-black text-sm flex items-center justify-center" title="Kurangi">-</button>
+                    <span id="cart-count-bundle10" class="w-6 font-black text-amber-700 text-sm">0</span>
+                    <button onclick="window.coopGame.addToCart('bundle10')" class="w-7 h-7 rounded-lg bg-amber-500 hover:bg-amber-600 text-white font-black text-sm flex items-center justify-center shadow-xs" title="Tambah 10">+</button>
+                  </div>
+                </div>
+
+                <!-- Item 2: Stik Satuan (1 stik) -->
+                <div class="shop-shelf-item p-3 text-center space-y-2">
+                  <div class="w-12 h-12 mx-auto rounded-xl bg-orange-100 border border-orange-300 flex items-center justify-center text-2xl shadow-xs">
+                    🥢
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-black text-gray-800">Stik Satuan</h5>
+                    <span class="text-[10px] font-extrabold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 inline-block mt-0.5">
+                      1 Stik Kayu
+                    </span>
+                  </div>
+                  <div class="flex items-center justify-center gap-1.5 pt-1">
+                    <button onclick="window.coopGame.removeFromCart('stick1')" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-gray-700 font-black text-sm flex items-center justify-center" title="Kurangi">-</button>
+                    <span id="cart-count-stick1" class="w-6 font-black text-amber-700 text-sm">0</span>
+                    <button onclick="window.coopGame.addToCart('stick1')" class="w-7 h-7 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-black text-sm flex items-center justify-center shadow-xs" title="Tambah 1">+</button>
+                  </div>
+                </div>
+
+                <!-- Item 3: Lem Kayu Kuat -->
+                <div class="shop-shelf-item p-3 text-center space-y-2">
+                  <div class="w-12 h-12 mx-auto rounded-xl bg-sky-100 border border-sky-300 flex items-center justify-center text-2xl shadow-xs">
+                    🧴
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-black text-gray-800">Lem Kayu Kuat</h5>
+                    <span class="text-[10px] font-extrabold text-sky-700 bg-sky-50 px-1.5 py-0.5 rounded border border-sky-200 inline-block mt-0.5">
+                      Alas Kokoh
+                    </span>
+                  </div>
+                  <div class="flex items-center justify-center gap-1.5 pt-1">
+                    <button onclick="window.coopGame.removeFromCart('glue')" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-gray-700 font-black text-sm flex items-center justify-center">-</button>
+                    <span id="cart-count-glue" class="w-6 font-black text-sky-700 text-sm">0</span>
+                    <button onclick="window.coopGame.addToCart('glue')" class="w-7 h-7 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-black text-sm flex items-center justify-center shadow-xs">+</button>
+                  </div>
+                </div>
+
+                <!-- Item 4: Cat Warna & Kuas -->
+                <div class="shop-shelf-item p-3 text-center space-y-2">
+                  <div class="w-12 h-12 mx-auto rounded-xl bg-purple-100 border border-purple-300 flex items-center justify-center text-2xl shadow-xs">
+                    🎨
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-black text-gray-800">Cat & Kuas Cantik</h5>
+                    <span class="text-[10px] font-extrabold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200 inline-block mt-0.5">
+                      Seni Estetika
+                    </span>
+                  </div>
+                  <div class="flex items-center justify-center gap-1.5 pt-1">
+                    <button onclick="window.coopGame.removeFromCart('paint')" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-gray-700 font-black text-sm flex items-center justify-center">-</button>
+                    <span id="cart-count-paint" class="w-6 font-black text-purple-700 text-sm">0</span>
+                    <button onclick="window.coopGame.addToCart('paint')" class="w-7 h-7 rounded-lg bg-purple-500 hover:bg-purple-600 text-white font-black text-sm flex items-center justify-center shadow-xs">+</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Kolom Kanan (5 Kolom): Keranjang Belanja & Jawaban Siswa -->
+          <div class="lg:col-span-5 space-y-5">
+            
+            <!-- Keranjang Belanja Siswa -->
+            <div class="card-kid p-5 bg-white space-y-4 border-2 border-emerald-300">
+              <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🧺</span>
+                  <div>
+                    <h4 class="font-black text-gray-800 text-base font-heading">Keranjang Belanjaan</h4>
+                    <p class="text-xs text-emerald-700 font-medium">Bahan proyek yang sudah kamu ambil</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="text-[10px] uppercase font-black text-gray-400 block">Total Stik di Keranjang:</span>
+                  <div class="text-base font-black text-emerald-700" id="cart-total-sticks-display">
+                    <strong>0</strong> Stik
+                  </div>
+                </div>
+              </div>
+
+              <!-- Visual Stik di Keranjang (Bundel 10 & Satuan) -->
+              <div class="p-3 bg-slate-50 rounded-2xl border border-slate-200 min-h-[90px] flex flex-wrap items-center justify-center" id="cart-visual-sticks-container">
+                <!-- Stik rendered via JS -->
+              </div>
+
+              <!-- Instruksi Pertanyaan Penjumlahan -->
+              <div class="pt-2 text-center space-y-3">
+                <span class="text-xs font-black uppercase text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">
+                  Berapa jumlah seluruh stik es krim yang dibeli?
+                </span>
+                
+                <!-- Opsi Jawaban Angka Ceria -->
+                <div class="grid grid-cols-3 gap-2.5 pt-2" id="shop-quiz-options">
+                  <!-- Rendered via JS -->
+                </div>
+
+                <!-- Feedback Box -->
+                <div id="shop-feedback-box" class="hidden text-left mt-3"></div>
+              </div>
+            </div>
+
+            <!-- Kartu Karakter Siswa Pembeli -->
+            <div class="card-kid p-4 bg-gradient-to-br from-amber-50 to-rose-50 border border-amber-200 flex items-center gap-3">
+              <div class="w-14 h-14 rounded-2xl bg-white border border-amber-300 flex items-center justify-center text-3xl shadow-xs" id="shop-buyer-avatar">
+                👧👦
+              </div>
+              <div class="space-y-0.5">
+                <span class="text-[10px] font-black uppercase text-amber-800 bg-amber-200/70 px-2 py-0.5 rounded">Pembeli Cilik</span>
+                <h5 class="text-sm font-black text-gray-800" id="shop-buyer-name">Siti & Beni</h5>
+                <p class="text-xs text-gray-600">"Semangat berhitung jujur di Koperasi Sekolah!"</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= MODE 2: KASIR CILIK KOPERASI ================= -->
+      <div id="game-panel-cashier" class="hidden space-y-6">
+        
+        <!-- Header Kasir Cilik -->
+        <div class="card-kid p-5 bg-white space-y-4">
+          <div class="flex items-center justify-between flex-wrap gap-3 pb-3 border-b border-gray-100">
+            <div class="flex items-center gap-3">
+              <div class="w-14 h-14 rounded-2xl bg-indigo-100 border-2 border-indigo-300 flex items-center justify-center text-3xl shadow-sm">
+                🧑‍💼
+              </div>
+              <div>
+                <h3 class="font-black text-gray-800 text-lg font-heading flex items-center gap-2">
+                  Meja Kasir Cilik Koperasi
+                  <span class="bg-indigo-100 text-indigo-800 text-xs font-black px-2.5 py-0.5 rounded-full border border-indigo-300">
+                    Roleplay Interaktif
+                  </span>
+                </h3>
+                <p class="text-xs text-gray-500 font-semibold">Layani teman-teman yang membeli stik es krim dengan teliti dan sopan!</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-black text-indigo-900 bg-indigo-50 border border-indigo-200 px-3 py-1.5 rounded-xl shadow-xs" id="cashier-queue-badge">
+                Pembeli 1 dari 5
+              </span>
+              <button onclick="window.coopGame.readCustomerSpeech()" class="btn-fun bg-amber-500 hover:bg-amber-600 text-white text-xs font-black px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
+                🔊 Dengarkan Pesanan
+              </button>
+            </div>
+          </div>
+
+          <!-- Dialog Pembeli yang Sedang Mengantre -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            
+            <div class="md:col-span-4 flex items-center gap-3 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+              <div class="w-12 h-12 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center text-3xl shadow-xs" id="cashier-customer-avatar">
+                👦
+              </div>
+              <div>
+                <h4 class="font-black text-gray-800 text-sm font-heading" id="cashier-customer-name">Edo</h4>
+                <span class="text-xs text-indigo-700 font-bold" id="cashier-customer-tag">Siswa Kelas 2A</span>
+              </div>
+            </div>
+
+            <!-- Balon Kata Pesanan -->
+            <div class="md:col-span-8 speech-bubble p-4 text-xs sm:text-sm text-gray-800 font-bold leading-relaxed border-2 border-indigo-200">
+              <p id="cashier-customer-bubble">
+                "Halo Kasir Cilik! Saya mau beli 10 stik es krim kayu dan 10 stik warna untuk alas tempat pensil. Berapa total stik pesanan saya?"
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Layout Mesin Kasir & Meja Hitung -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Kolom Kiri (7 Kolom): Meja Manipulatif Stik Kasir -->
+          <div class="lg:col-span-7 space-y-5">
+            <div class="card-kid p-5 bg-white space-y-4 border-2 border-amber-300">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl">🪵</span>
+                  <div>
+                    <h4 class="font-black text-gray-800 text-base font-heading">Meja Rakit Stik Pesanan</h4>
+                    <p class="text-xs text-amber-800 font-medium">Bantu hitung dengan menyusun stik puluhan dan satuan</p>
+                  </div>
+                </div>
+
+                <button onclick="window.coopGame.cashierClearSticks()" class="text-xs font-bold text-gray-500 hover:text-gray-800 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
+                  🔄 Hapus Stik
+                </button>
+              </div>
+
+              <!-- Wadah Stik yang Sedang Ditata di Meja Kasir -->
+              <div class="p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-amber-300 min-h-[120px] flex flex-wrap items-center justify-center gap-2" id="cashier-workbench-sticks">
+                <!-- Stik rendered via JS -->
+              </div>
+
+              <!-- Tombol Cepat Stik Puluhan & Satuan -->
+              <div class="grid grid-cols-2 gap-3 pt-2">
+                <button onclick="window.coopGame.cashierAddTens()" class="btn-fun bg-amber-500 hover:bg-amber-600 text-white font-black text-xs sm:text-sm py-3 px-4 rounded-2xl flex items-center justify-center gap-2 shadow">
+                  <span>📦</span>
+                  <span>+10 Stik Puluhan</span>
+                  <span class="bg-amber-700/60 px-2 py-0.5 rounded-lg text-xs" id="cashier-tens-display">0</span>
+                </button>
+
+                <button onclick="window.coopGame.cashierAddUnits()" class="btn-fun bg-orange-500 hover:bg-orange-600 text-white font-black text-xs sm:text-sm py-3 px-4 rounded-2xl flex items-center justify-center gap-2 shadow">
+                  <span>🥢</span>
+                  <span>+1 Stik Satuan</span>
+                  <span class="bg-orange-700/60 px-2 py-0.5 rounded-lg text-xs" id="cashier-units-display">0</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Gambar Kartun Sahabat Siti & Beni -->
+            <div class="w-full h-40 rounded-2xl overflow-hidden border-2 border-slate-200 bg-white shadow-inner">
+              <img src="assets/img/siti-beni.svg" alt="Siti dan Beni Membuat Kerajinan" class="w-full h-full object-contain p-2">
+            </div>
+          </div>
+
+          <!-- Kolom Kanan (5 Kolom): Mesin Kasir Digital & Keypad -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="card-kid p-6 bg-slate-900 text-white space-y-4 rounded-3xl shadow-xl border-4 border-slate-700">
+              
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+                <span class="text-xs font-black tracking-widest text-amber-400 uppercase">MESIN KASIR DIGITAL KOPERASI</span>
+                <span class="text-[10px] text-emerald-400 font-bold">🟢 ONLINE</span>
+              </div>
+
+              <!-- Layar LCD Kasir Berwarna Hijau Fosfor -->
+              <div class="p-4 rounded-2xl cashier-lcd text-right border-2 border-slate-700 shadow-inner">
+                <span class="text-[10px] uppercase text-emerald-500 block">TOTAL STIK:</span>
+                <div class="text-4xl sm:text-5xl font-black" id="cashier-lcd-display">0</div>
+              </div>
+
+              <!-- Keypad Kasir Ramah Anak (1 to 9, 0, C) -->
+              <div class="grid grid-cols-3 gap-2.5 pt-2">
+                <button onclick="window.coopGame.cashierKeypadPress(1)" class="keypad-btn py-3 text-lg">1</button>
+                <button onclick="window.coopGame.cashierKeypadPress(2)" class="keypad-btn py-3 text-lg">2</button>
+                <button onclick="window.coopGame.cashierKeypadPress(3)" class="keypad-btn py-3 text-lg">3</button>
+                <button onclick="window.coopGame.cashierKeypadPress(4)" class="keypad-btn py-3 text-lg">4</button>
+                <button onclick="window.coopGame.cashierKeypadPress(5)" class="keypad-btn py-3 text-lg">5</button>
+                <button onclick="window.coopGame.cashierKeypadPress(6)" class="keypad-btn py-3 text-lg">6</button>
+                <button onclick="window.coopGame.cashierKeypadPress(7)" class="keypad-btn py-3 text-lg">7</button>
+                <button onclick="window.coopGame.cashierKeypadPress(8)" class="keypad-btn py-3 text-lg">8</button>
+                <button onclick="window.coopGame.cashierKeypadPress(9)" class="keypad-btn py-3 text-lg">9</button>
+                <button onclick="window.coopGame.cashierKeypadBackspace()" class="keypad-btn py-3 text-sm bg-rose-50 text-rose-700 border border-rose-300">⌫ Hapus</button>
+                <button onclick="window.coopGame.cashierKeypadPress(0)" class="keypad-btn py-3 text-lg">0</button>
+                <button onclick="window.coopGame.cashierClearSticks()" class="keypad-btn py-3 text-sm bg-amber-50 text-amber-800 border border-amber-300">C</button>
+              </div>
+
+              <!-- Tombol Selesaikan Transaksi -->
+              <button onclick="window.coopGame.submitCashierOrder()" class="btn-fun w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black text-base py-3.5 rounded-2xl shadow-lg border-2 border-emerald-600 flex items-center justify-center gap-2">
+                <span>🔔</span>
+                <span>KACHING! Hitung & Bayar!</span>
+              </button>
+
+              <!-- Feedback Box Kasir -->
+              <div id="cashier-feedback-box" class="hidden text-left mt-3"></div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================================
+         TAB 2: STUDIO 3D TEMPAT PENSIL & GALERI KERAJINAN NYATA
+         ========================================================================= -->
+    <section id="tab-3d" class="tab-content-panel hidden space-y-8">
+      
+      <!-- Pengantar 3D -->
+      <div class="bg-gradient-to-r from-rose-500 via-amber-500 to-emerald-500 rounded-3xl p-6 text-white shadow-lg relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl">
+          <span class="bg-white/20 backdrop-blur-md text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+            Model 3D Interaktif 360° & Rakit Bertahap
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black font-heading mt-2">
+            Studio Rekayasa 3D: Rakit Tempat Pensil Stik Es Krim!
+          </h2>
+          <p class="text-sm sm:text-base text-rose-50 font-medium mt-1">
+            Putar model tempat pensil dari segala arah dengan mouse atau layar sentuh. Amati bagaimana setiap penambahan 10 stik menyempurnakan struktur wadah pensil!
+          </p>
+        </div>
+      </div>
+
+      <!-- Studio 3D Canvas & Panel Kontrol -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Area Kanvas 3D (8 Kolom) -->
+        <div class="lg:col-span-8 card-kid p-4 bg-white space-y-4">
+          <div class="relative w-full h-[420px] sm:h-[480px] rounded-2xl overflow-hidden bg-gradient-to-b from-sky-50 to-slate-100 border-2 border-slate-200">
+            <div id="canvas3d-container" class="w-full h-full"></div>
+
+            <!-- Overlay Petunjuk Putar -->
+            <div class="absolute top-3 left-3 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-gray-600 flex items-center gap-1.5 shadow-sm">
+              <span>🔄</span> Sentuh / Tarik mouse untuk memutar 360°
+            </div>
+
+            <!-- Tombol Aksi Cepat pada Kanvas -->
+            <div class="absolute bottom-3 right-3 flex items-center gap-2">
+              <button id="btn-auto-rotate" class="text-xs font-bold px-3 py-2 rounded-xl bg-white/90 hover:bg-white text-gray-700 shadow-md transition border border-gray-200" title="Putar Otomatis">
+                🌀 Putar
+              </button>
+              <button id="btn-explode" class="text-xs font-bold px-3 py-2 rounded-xl bg-white/90 hover:bg-white text-gray-700 shadow-md transition border border-gray-200" title="Bongkar Sambungan (Explode)">
+                💥 Bongkar
+              </button>
+              <button id="btn-reset-cam" class="text-xs font-bold px-3 py-2 rounded-xl bg-white/90 hover:bg-white text-gray-700 shadow-md transition border border-gray-200" title="Reset Pandangan">
+                🎯 Kamera
+              </button>
+            </div>
+          </div>
+
+          <!-- Indikator Tahap Rakit & Rumus Matematika 3D -->
+          <div class="p-4 bg-slate-50 rounded-2xl border-2 border-slate-200 flex items-center justify-between flex-wrap gap-4">
+            <div>
+              <span id="3d-step-badge" class="text-xs font-black uppercase text-rose-600 tracking-wider bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-200">
+                Langkah 5 dari 6
+              </span>
+              <h3 id="3d-step-title" class="text-lg font-black text-gray-800 font-heading mt-1">
+                Wadah Selesai (+10 Stik Dinding Kiri)
+              </h3>
+              <p class="text-xs sm:text-sm font-extrabold text-indigo-700 mt-0.5">
+                Rumus Penjumlahan: <span id="3d-math-formula" class="font-mono bg-indigo-50 px-2 py-0.5 rounded">40 + 10 = 50 Stik</span>
+              </p>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button id="btn-speak-step" class="text-xs font-bold px-3 py-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 transition flex items-center gap-1.5 shadow-sm">
+                🔊 Baca Langkah
+              </button>
+              <button id="btn-prev-step" class="btn-fun bg-white hover:bg-slate-50 text-gray-700 font-bold px-4 py-2.5 rounded-xl border border-gray-300 shadow-sm text-sm">
+                ◀ Mundur
+              </button>
+              <button id="btn-next-step" class="btn-fun btn-primary font-black px-5 py-2.5 rounded-xl text-sm flex items-center gap-1.5">
+                Tahap Selanjutnya (+10 Stik) ▶
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Tema Warna & Konsep STEAM (4 Kolom) -->
+        <div class="lg:col-span-4 space-y-4">
+          
+          <!-- Pilihan Palet Warna Stik (STEAM Art) -->
+          <div class="card-kid p-5 bg-white space-y-3">
+            <h3 class="font-extrabold text-gray-800 text-base flex items-center gap-2 font-heading">
+              <span>🎨</span> Tema Warna Stik (Seni Estetika)
+            </h3>
+            <p class="text-xs text-gray-500">Pilih kombinasi warna stik kesukaanmu:</p>
+            <div class="grid grid-cols-2 gap-2.5">
+              <button class="theme-btn p-3 rounded-2xl border-2 border-slate-200 text-left hover:border-amber-400 transition bg-amber-50/50 ring-4 ring-blue-500" data-theme="rainbow">
+                <span class="text-xs font-bold text-gray-800 block">🌈 Pelangi Ceria</span>
+                <span class="text-[10px] text-gray-500">Warna-warni cerah</span>
+              </button>
+              <button class="theme-btn p-3 rounded-2xl border-2 border-slate-200 text-left hover:border-amber-600 transition bg-amber-100/40" data-theme="wood">
+                <span class="text-xs font-bold text-amber-900 block">🪵 Kayu Alami</span>
+                <span class="text-[10px] text-amber-700">Warna stik asli</span>
+              </button>
+              <button class="theme-btn p-3 rounded-2xl border-2 border-slate-200 text-left hover:border-pink-400 transition bg-pink-50/50" data-theme="pastel">
+                <span class="text-xs font-bold text-pink-900 block">🍬 Permen Pastel</span>
+                <span class="text-[10px] text-pink-700">Warna lembut manis</span>
+              </button>
+              <button class="theme-btn p-3 rounded-2xl border-2 border-slate-200 text-left hover:border-sky-400 transition bg-sky-50/50" data-theme="ocean">
+                <span class="text-xs font-bold text-sky-900 block">🌊 Biru Samudra</span>
+                <span class="text-[10px] text-sky-700">Warna laut segar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Total Stik Terpasang Card -->
+          <div class="card-kid p-5 bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 space-y-2 text-center">
+            <span class="text-xs font-black uppercase text-indigo-700">Total Stik Terpasang di Model</span>
+            <div class="text-5xl font-black text-indigo-600 font-heading" id="3d-total-sticks">50</div>
+            <p class="text-xs font-bold text-gray-600">
+              5 Bundel Puluhan = 50 Stik Es Krim
+            </p>
+          </div>
+
+          <!-- Rahasia STEAM Tempat Pensil -->
+          <div class="card-kid p-5 bg-white space-y-3">
+            <h3 class="font-extrabold text-gray-800 text-base flex items-center gap-2 font-heading">
+              <span>💡</span> Rahasia STEAM Tempat Pensil
+            </h3>
+            <ul class="text-xs space-y-2.5 text-gray-600 font-medium">
+              <li class="p-2.5 bg-blue-50 rounded-xl border-l-4 border-blue-500">
+                <strong class="text-blue-900">S (Sains):</strong> Stik es krim terbuat dari serat kayu alami. Lem kayu meresap ke pori serat kayu agar menyatu sangat kuat!
+              </li>
+              <li class="p-2.5 bg-green-50 rounded-xl border-l-4 border-green-500">
+                <strong class="text-green-900">E (Rekayasa):</strong> Bentuk kotak 4 dinding dengan sambungan selang-seling (interlocking) membuat wadah kokoh dan tidak oleng.
+              </li>
+              <li class="p-2.5 bg-purple-50 rounded-xl border-l-4 border-purple-500">
+                <strong class="text-purple-900">M (Matematika):</strong> 4 dinding × 10 stik = 40 stik. Ditambah 10 stik alas = 50 stik es krim!
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- GALERI FOTO ASLI KERAJINAN TEMPAT PENSIL (ASET GRATIS BEBAS ROYALTI) -->
+      <div class="card-kid p-6 bg-white space-y-5">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="bg-emerald-100 text-emerald-800 text-xs font-black px-3 py-1 rounded-full uppercase border border-emerald-300">
+              Aset Gratis Bebas Royalti
+            </span>
+            <h3 class="text-xl sm:text-2xl font-black text-gray-800 font-heading mt-1">
+              📸 Galeri Inspirasi Nyata Tempat Pensil Stik Es Krim
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-500 font-medium">
+              Foto nyata proyek tempat pensil stik es krim untuk inspirasi praktik langsung di kelas!
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Item 1: Warna Warni Pelangi -->
+          <div class="craft-gallery-card border-2 border-slate-200 bg-white">
+            <div class="h-44 w-full bg-slate-100 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&q=80" alt="Tempat Pensil Warna Warni" class="w-full h-full object-cover">
+              <span class="absolute top-2 left-2 bg-rose-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full">
+                Seni Pelangi
+              </span>
+            </div>
+            <div class="p-3.5 space-y-1">
+              <h4 class="font-extrabold text-sm text-gray-800">Kreasi Stik Pelangi</h4>
+              <p class="text-xs text-gray-500">Kombinasi stik merah, kuning, dan biru untuk menampung spidol warna.</p>
+            </div>
+          </div>
+
+          <!-- Item 2: Kayu Alami Kokoh -->
+          <div class="craft-gallery-card border-2 border-slate-200 bg-white">
+            <div class="h-44 w-full bg-slate-100 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=600&q=80" alt="Kerajinan Kayu Alami" class="w-full h-full object-cover">
+              <span class="absolute top-2 left-2 bg-amber-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full">
+                Kayu Alami
+              </span>
+            </div>
+            <div class="p-3.5 space-y-1">
+              <h4 class="font-extrabold text-sm text-gray-800">Tempat Pensil Alami</h4>
+              <p class="text-xs text-gray-500">Struktur kayu polos memperlihatkan tekstur serat kayu stik yang alami.</p>
+            </div>
+          </div>
+
+          <!-- Item 3: Belajar Kolaboratif -->
+          <div class="craft-gallery-card border-2 border-slate-200 bg-white">
+            <div class="h-44 w-full bg-slate-100 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=600&q=80" alt="Aktivitas Prakarya Siswa" class="w-full h-full object-cover">
+              <span class="absolute top-2 left-2 bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full">
+                Gotong Royong
+              </span>
+            </div>
+            <div class="p-3.5 space-y-1">
+              <h4 class="font-extrabold text-sm text-gray-800">Kolaborasi Kelompok</h4>
+              <p class="text-xs text-gray-500">Siswa berbagi tugas: ada yang menghitung stik, mengelem, dan merapikan.</p>
+            </div>
+          </div>
+
+          <!-- Item 4: Pengisian Alat Tulis -->
+          <div class="craft-gallery-card border-2 border-slate-200 bg-white">
+            <div class="h-44 w-full bg-slate-100 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1584697964190-7bb88a221f43?auto=format&fit=crop&w=600&q=80" alt="Alat Tulis Sekolah" class="w-full h-full object-cover">
+              <span class="absolute top-2 left-2 bg-purple-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full">
+                Uji Beban
+              </span>
+            </div>
+            <div class="p-3.5 space-y-1">
+              <h4 class="font-extrabold text-sm text-gray-800">Hasil Siap Pakai</h4>
+              <p class="text-xs text-gray-500">Mampu menampung 15 pensil, penghapus, dan penggaris tanpa goyah.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================================
+         TAB 3: LABORATORIUM NILAI TEMPAT & KUIS PULUHAN
+         ========================================================================= -->
+    <section id="tab-math" class="tab-content-panel hidden space-y-6">
+      
+      <!-- Pengantar Matematika Puluhan -->
+      <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-6 text-white shadow-lg">
+        <div class="max-w-3xl">
+          <span class="bg-white/20 backdrop-blur-md text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+            Matematika Fase A - Kelas 2 SD
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black font-heading mt-2">
+            Laboratorium Nilai Tempat & Bundel Stik Puluhan
+          </h2>
+          <p class="text-sm sm:text-base text-blue-100 font-medium mt-1">
+            Satu ikat berisi 10 stik es krim disebut <strong>1 Puluhan</strong>. Tambahkan stik dan perhatikan bagaimana stik otomatis diikat menjadi bundel puluhan!
+          </p>
+        </div>
+      </div>
+
+      <!-- Simulator Bundel Stik & Papan Nilai Tempat -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Papan Nilai Tempat Interaktif (7 Kolom) -->
+        <div class="lg:col-span-7 card-kid p-6 bg-white space-y-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-extrabold text-gray-800 text-lg font-heading flex items-center gap-2">
+              <span>📦</span> Simulator Bundel Stik Es Krim
+            </h3>
+            <button id="btn-reset-math" class="text-xs font-bold text-red-500 hover:text-red-700 px-3 py-1 bg-red-50 rounded-lg">
+              Reset Stik
+            </button>
+          </div>
+
+          <!-- Papan Nilai Tempat (Puluhan & Satuan) -->
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Kolom Puluhan -->
+            <div class="place-value-col col-tens">
+              <span class="text-xs font-black uppercase text-sky-800 tracking-wider">PULUHAN (10)</span>
+              <div class="text-4xl font-black text-sky-600 my-2" id="math-tens-count">0</div>
+              <p class="text-[11px] text-sky-700 font-bold">Ikat Puluhan (10 stik)</p>
+              
+              <!-- Wadah Bundel Visual -->
+              <div id="visual-bundles-container" class="mt-4 min-h-[120px] flex flex-wrap gap-2 items-center justify-center p-3 bg-white/60 rounded-xl border border-sky-200">
+                <span class="text-xs text-gray-400 italic">Belum ada ikatan puluhan</span>
+              </div>
+            </div>
+
+            <!-- Kolom Satuan -->
+            <div class="place-value-col col-ones">
+              <span class="text-xs font-black uppercase text-amber-800 tracking-wider">SATUAN (1)</span>
+              <div class="text-4xl font-black text-amber-600 my-2" id="math-ones-count">0</div>
+              <p class="text-[11px] text-amber-700 font-bold">Stik Lepas Satuan</p>
+
+              <!-- Wadah Stik Lepas Visual -->
+              <div id="visual-units-container" class="mt-4 min-h-[120px] flex flex-wrap gap-1.5 items-center justify-center p-3 bg-white/60 rounded-xl border border-amber-200">
+                <span class="text-xs text-gray-400 italic">0 satuan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Display & Penjelasan -->
+          <div class="p-4 bg-slate-50 rounded-2xl border-2 border-slate-200 text-center">
+            <span class="text-xs text-gray-500 font-bold uppercase">Total Seluruh Stik</span>
+            <div class="text-4xl font-black text-indigo-600 my-1" id="math-total-display">0</div>
+            <p class="text-sm font-extrabold text-gray-700" id="math-explain-text">
+              0 = 0 Puluhan (0) + 0 Satuan (0)
+            </p>
+          </div>
+
+          <!-- Tombol Tambah Stik -->
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <button id="btn-add-ten" class="btn-fun btn-primary py-3.5 px-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-2">
+              ➕ Tambah 10 Stik (1 Puluhan)
+            </button>
+            <button id="btn-add-one" class="btn-fun btn-accent py-3.5 px-4 rounded-2xl font-black text-sm sm:text-base flex items-center justify-center gap-2">
+              ➕ Tambah 1 Stik Satuan
+            </button>
+          </div>
+        </div>
+
+        <!-- Kuis Latihan Cepat Berhitung (5 Kolom) -->
+        <div class="lg:col-span-5 card-kid p-6 bg-white space-y-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-gray-100 flex-wrap gap-2">
+              <h3 class="font-extrabold text-gray-800 text-lg font-heading flex items-center gap-2">
+                <span>⭐</span> Kuis Bintang Cepat
+              </h3>
+              <div class="bg-amber-100 text-amber-900 font-black px-3 py-1 rounded-xl text-sm">
+                Skor: <span id="quiz-score">0</span>
+              </div>
+            </div>
+
+            <!-- Filter Kategori Soal -->
+            <div class="mt-3 flex gap-1.5 flex-wrap text-xs">
+              <button class="quiz-filter-btn active px-2.5 py-1 rounded-lg bg-indigo-600 text-white font-bold" data-mode="all">Semua Soal</button>
+              <button class="quiz-filter-btn px-2.5 py-1 rounded-lg bg-slate-100 text-gray-700 font-bold hover:bg-slate-200" data-mode="pure-tens">Puluhan Utuh</button>
+              <button class="quiz-filter-btn px-2.5 py-1 rounded-lg bg-slate-100 text-gray-700 font-bold hover:bg-slate-200" data-mode="mixed">Tanpa Simpan</button>
+              <button class="quiz-filter-btn px-2.5 py-1 rounded-lg bg-slate-100 text-gray-700 font-bold hover:bg-slate-200" data-mode="regrouping">Menyimpan</button>
+            </div>
+
+            <!-- Pertanyaan Soal Cerita -->
+            <div class="mt-3 p-4 bg-amber-50/70 border-2 border-amber-200 rounded-2xl">
+              <span class="text-xs font-extrabold uppercase text-amber-800 tracking-wider">Soal Cerita Proyek Stik:</span>
+              <p id="quiz-question" class="text-sm font-bold text-gray-800 mt-2 leading-relaxed">
+                Memuat pertanyaan kuis...
+              </p>
+            </div>
+
+            <!-- Feedback Jawaban -->
+            <div id="quiz-feedback" class="hidden my-3 text-center"></div>
+
+            <!-- Opsi Pilihan Jawaban -->
+            <div class="mt-4 grid grid-cols-1 gap-2.5" id="quiz-options">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <button id="btn-next-quiz" class="hidden w-full btn-fun btn-success py-3 rounded-2xl font-black text-base mt-4">
+            Soal Berikutnya ➔
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         TAB 4: KKA KODING ALGORITMA & PROSEDUR TEKS PETUNJUK
+         ========================================================================= -->
+    <section id="tab-kka" class="tab-content-panel hidden space-y-6">
+      
+      <!-- Pengantar KKA & Bahasa Indonesia -->
+      <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-3xl p-6 text-white shadow-lg">
+        <div class="max-w-3xl">
+          <span class="bg-white/20 backdrop-blur-md text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+            KKA (Koding & AI) + Bahasa Indonesia (Teks Petunjuk Prosedur)
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black font-heading mt-2">
+            Algoritma Sekuensial Membuat Tempat Pensil
+          </h2>
+          <p class="text-sm sm:text-base text-emerald-100 font-medium mt-1">
+            Dalam koding dan teks petunjuk, langkah kerja harus <strong>berurutan secara benar (Algoritma Sekuensial)</strong>. Susun 5 kartu petunjuk berikut dari langkah 1 sampai 5, lalu tekan tombol <strong>Jalankan Algoritma</strong>!
+          </p>
+        </div>
+      </div>
+
+      <!-- Grid Koding Algoritma & Slot -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Kolom Kiri: Kartu Blok Instruksi (5 Kolom) -->
+        <div class="lg:col-span-5 card-kid p-5 bg-white space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="font-extrabold text-gray-800 text-base font-heading flex items-center gap-2">
+              <span>📋</span> Kartu Petunjuk Langkah Kerja
+            </h3>
+            <span class="text-[11px] text-gray-400 font-bold">Klik / Tarik Kartu</span>
+          </div>
+          <p class="text-xs text-gray-500">
+            Klik kartu di bawah ini untuk memasukkannya ke slot langkah yang masih kosong:
+          </p>
+          
+          <!-- Wadah Kartu Blok yang Diacak -->
+          <div id="source-blocks-container" class="space-y-2.5">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Editor Slot Algoritma (7 Kolom) -->
+        <div class="lg:col-span-7 card-kid p-6 bg-white space-y-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-extrabold text-gray-800 text-base font-heading flex items-center gap-2">
+              <span>💻</span> Urutan Algoritma Siswa (Langkah 1 - 5)
+            </h3>
+            <button id="btn-reset-blocks" class="text-xs font-bold text-gray-500 hover:text-gray-700 px-3 py-1 bg-gray-100 rounded-lg">
+              Kosongkan Slot
+            </button>
+          </div>
+
+          <!-- 5 Slot Penampung Langkah -->
+          <div class="space-y-3">
+            <div class="drop-slot" data-slot-index="0"></div>
+            <div class="drop-slot" data-slot-index="1"></div>
+            <div class="drop-slot" data-slot-index="2"></div>
+            <div class="drop-slot" data-slot-index="3"></div>
+            <div class="drop-slot" data-slot-index="4"></div>
+          </div>
+
+          <!-- Tombol Jalankan Algoritma -->
+          <div class="pt-2">
+            <button id="btn-run-code" class="w-full btn-fun btn-success py-4 rounded-2xl font-black text-lg flex items-center justify-center gap-2">
+              🚀 Jalankan Algoritma (Run Code)
+            </button>
+          </div>
+
+          <!-- Kotak Hasil Eksekusi / Debugging -->
+          <div id="kka-result-box" class="hidden"></div>
+
+          <!-- Mini Eksperimen Rekayasa (Engineering STEAM) -->
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 mt-4 space-y-2">
+            <h4 class="font-bold text-xs uppercase text-slate-700 tracking-wider flex items-center gap-1.5">
+              <span>🔬</span> Uji Rekayasa: Mengapa Tempat Pensil Harus Kokoh?
+            </h4>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              Jika alas tidak diberi 4 stik palang pengunci di bawahnya, stik alas dapat melorot saat menampung 15 pensil yang berat. Inilah penerapan <strong>Engineering (Rekayasa)</strong> dalam STEAM!
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TAB IFP: PERMAINAN LAYAR SENTUH INTERAKTIF (IFP / SMART BOARD KELAS)
+         ========================================================================= -->
+    <section id="tab-ifp" class="tab-content-panel hidden space-y-6">
+
+      <!-- Banner IFP Games -->
+      <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-3xl p-6 text-white shadow-xl relative overflow-hidden">
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="max-w-3xl">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="bg-white/20 backdrop-blur-md text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                Interactive Flat Panel (Smart Board) Fase A
+              </span>
+              <span class="bg-amber-400 text-amber-950 text-xs font-black px-2.5 py-0.5 rounded-full">
+                Sentuh & Mainkan
+              </span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black font-heading">
+              Arena Games Layar Sentuh IFP: Matematika & STEAM
+            </h2>
+            <p class="text-sm sm:text-base text-indigo-100 font-medium mt-1">
+              Dirancang untuk layar sentuh besar di depan kelas! Tombol ekstra besar, responsif multi-touch, dan mendukung kolaborasi antar kelompok siswa.
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen()" class="btn-fun bg-white hover:bg-indigo-50 text-indigo-900 font-black px-4 py-3 rounded-2xl shadow-lg border-2 border-indigo-200 flex items-center gap-2 text-xs sm:text-sm">
+              <span>📺</span>
+              <span>Layar Penuh IFP</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mode Navigasi Permainan IFP (3 Mode Seru) -->
+      <div class="card-kid p-3 bg-white flex flex-wrap gap-2 items-center justify-center sm:justify-start">
+        <button id="btn-ifp-nav-duel" onclick="window.ifpGame.setMode('duel')" class="btn-fun px-5 py-3 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 bg-rose-500 text-white shadow-md border-2 border-rose-600">
+          <span>⚔️</span>
+          <span>Mode 1: Duel 2 Tim Split-Screen</span>
+        </button>
+        <button id="btn-ifp-nav-catch" onclick="window.ifpGame.setMode('catch')" class="btn-fun px-5 py-3 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 bg-white text-gray-700 hover:bg-slate-100">
+          <span>🧺</span>
+          <span>Mode 2: Tangkap & Hitung Stik Raksasa</span>
+        </button>
+        <button id="btn-ifp-nav-wheel" onclick="window.ifpGame.setMode('wheel')" class="btn-fun px-5 py-3 rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 bg-white text-gray-700 hover:bg-slate-100">
+          <span>🎡</span>
+          <span>Mode 3: Roda Putar STEAM & Koperasi</span>
+        </button>
+      </div>
+
+      <!-- =========================================================================
+           PANEL 1: DUEL 2 TIM SPLIT-SCREEN (TIM SITI VS TIM BENI)
+           ========================================================================= -->
+      <div id="ifp-panel-duel" class="space-y-6">
+        <!-- Banner Soal Bersama di Bagian Atas Layar IFP -->
+        <div class="card-kid p-6 bg-gradient-to-br from-indigo-50 to-purple-50 border-4 border-indigo-200 text-center relative shadow-lg">
+          <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+            <span id="ifp-duel-round-banner" class="text-xs sm:text-sm font-black text-indigo-700 bg-indigo-100 px-4 py-1.5 rounded-full border border-indigo-200 inline-block">
+              Ronde 1 • Siapa Cepat dan Tepat!
+            </span>
+            <button onclick="window.ifpGame.resetDuelGame()" class="btn-fun bg-white hover:bg-slate-100 text-gray-600 border border-slate-300 text-xs font-black px-3.5 py-1.5 rounded-xl flex items-center gap-1.5 shadow-sm">
+              <span>🔄</span>
+              <span>Ulangi Duel</span>
+            </button>
+          </div>
+          <div class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">
+            📜 Pertanyaan Soal Cerita IFP
+          </div>
+          <p id="ifp-duel-question-text" class="text-lg sm:text-2xl md:text-3xl font-black text-gray-800 leading-snug min-h-[64px] flex items-center justify-center">
+            Memuat soal cerita...
+          </p>
+          <div class="text-[11px] text-gray-500 mt-2">
+            💡 Tim pertama yang menekan jawaban benar di layarnya akan mendapat +1 Poin. Pertama meraih 5 Poin menang!
+          </div>
+        </div>
+
+        <!-- Split-Screen Arena: Sisi Kiri (Tim Siti) vs Sisi Kanan (Tim Beni) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ifp-duel-container">
+          
+          <!-- SISI KIRI: TIM SITI (MERAH) -->
+          <div class="card-kid p-6 bg-rose-50/70 border-4 border-rose-300 rounded-3xl flex flex-col justify-between space-y-4 shadow-md">
+            <div>
+              <div class="flex items-center justify-between border-b-2 border-rose-200 pb-3 mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-14 h-14 rounded-2xl bg-rose-500 text-white flex items-center justify-center text-3xl shadow-md border-2 border-white">
+                    👧
+                  </div>
+                  <div>
+                    <h3 class="font-black text-rose-900 text-lg sm:text-xl font-heading">TIM SITI</h3>
+                    <div id="ifp-duel-stars-a" class="text-sm">⚪⚪⚪⚪⚪</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-rose-600 font-bold uppercase block">Skor</span>
+                  <span id="ifp-duel-score-a" class="text-3xl sm:text-4xl font-black text-rose-700 font-heading">0</span>
+                </div>
+              </div>
+              <div class="text-xs font-bold text-rose-800 mb-2 text-center uppercase tracking-wider">
+                👉 Sentuh Pilihan Jawaban Tim Siti:
+              </div>
+            </div>
+
+            <!-- Tombol Pilihan Jawaban Tim Siti (Grid 2x2 Jumbo) -->
+            <div id="ifp-duel-options-a" class="grid grid-cols-2 gap-3.5 pt-2">
+              <!-- Rendered via ifp-games.js -->
+            </div>
+          </div>
+
+          <!-- SISI KANAN: TIM BENI (BIRU) -->
+          <div class="card-kid p-6 bg-sky-50/70 border-4 border-sky-300 rounded-3xl flex flex-col justify-between space-y-4 shadow-md">
+            <div>
+              <div class="flex items-center justify-between border-b-2 border-sky-200 pb-3 mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-14 h-14 rounded-2xl bg-sky-500 text-white flex items-center justify-center text-3xl shadow-md border-2 border-white">
+                    👦
+                  </div>
+                  <div>
+                    <h3 class="font-black text-sky-900 text-lg sm:text-xl font-heading">TIM BENI</h3>
+                    <div id="ifp-duel-stars-b" class="text-sm">⚪⚪⚪⚪⚪</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-sky-600 font-bold uppercase block">Skor</span>
+                  <span id="ifp-duel-score-b" class="text-3xl sm:text-4xl font-black text-sky-700 font-heading">0</span>
+                </div>
+              </div>
+              <div class="text-xs font-bold text-sky-800 mb-2 text-center uppercase tracking-wider">
+                👉 Sentuh Pilihan Jawaban Tim Beni:
+              </div>
+            </div>
+
+            <!-- Tombol Pilihan Jawaban Tim Beni (Grid 2x2 Jumbo) -->
+            <div id="ifp-duel-options-b" class="grid grid-cols-2 gap-3.5 pt-2">
+              <!-- Rendered via ifp-games.js -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =========================================================================
+           PANEL 2: TANGKAP & HITUNG STIK RAKSASA ARCADE IFP
+           ========================================================================= -->
+      <div id="ifp-panel-catch" class="hidden space-y-6">
+        
+        <!-- Scoreboard Arcade Header -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="card-kid p-4 bg-amber-500 text-white text-center shadow-lg border-2 border-amber-300">
+            <span class="text-xs font-bold uppercase tracking-wider block opacity-90">🎯 Target Stik</span>
+            <span id="ifp-catch-target-display" class="text-4xl sm:text-5xl font-black font-heading">24</span>
+            <span class="text-xs block opacity-90 mt-0.5">stik es krim</span>
+          </div>
+
+          <div class="card-kid p-4 bg-indigo-600 text-white text-center shadow-lg border-2 border-indigo-400">
+            <span class="text-xs font-bold uppercase tracking-wider block opacity-90">⏱️ Sisa Waktu</span>
+            <span id="ifp-catch-timer-display" class="text-4xl sm:text-5xl font-black font-heading">60s</span>
+            <span class="text-xs block opacity-90 mt-0.5">hitung cepat kelas</span>
+          </div>
+
+          <div class="card-kid p-4 bg-emerald-600 text-white text-center shadow-lg border-2 border-emerald-400">
+            <span class="text-xs font-bold uppercase tracking-wider block opacity-90">🏆 Total Poin</span>
+            <span id="ifp-catch-score-display" class="text-4xl sm:text-5xl font-black font-heading">0</span>
+            <span class="text-xs block opacity-90 mt-0.5">poin kerjasama</span>
+          </div>
+        </div>
+
+        <!-- Wadah Keranjang Stik Visual -->
+        <div class="card-kid p-6 bg-white border-4 border-amber-200 text-center shadow-md space-y-4">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">🧺</span>
+              <h3 class="font-black text-gray-800 text-lg font-heading">Keranjang Susunan Stik Kelas</h3>
+            </div>
+            <div class="text-sm font-bold text-gray-700 bg-amber-50 px-3.5 py-1.5 rounded-xl border border-amber-200">
+              Total Stik Saat Ini: <strong id="ifp-catch-current-display" class="text-amber-700 text-xl font-black">0</strong>
+            </div>
+          </div>
+
+          <!-- Area Visual Stik Puluhan & Satuan yang Dikumpulkan -->
+          <div id="ifp-catch-visual-basket" class="min-h-[140px] bg-slate-50 border-2 border-dashed border-slate-300 rounded-2xl p-4 flex flex-wrap items-center justify-center gap-2">
+            <span class="text-gray-400 font-bold text-sm">Sentuh tombol +10 Puluhan atau +1 Satuan di bawah!</span>
+          </div>
+
+          <!-- Pesan Feedback -->
+          <div id="ifp-catch-feedback" class="hidden"></div>
+
+          <!-- Tombol Aksi Sentuh Jumbo IFP -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <button onclick="window.ifpGame.catchAddTens()" class="btn-fun ifp-touch-btn bg-red-500 hover:bg-red-600 text-white rounded-3xl text-xl sm:text-2xl font-black border-4 border-red-700 shadow-xl flex items-center justify-center gap-2 py-4">
+              <span>🔴</span>
+              <span>+10 Ikat Puluhan</span>
+            </button>
+
+            <button onclick="window.ifpGame.catchAddUnits()" class="btn-fun ifp-touch-btn bg-amber-400 hover:bg-amber-500 text-amber-950 rounded-3xl text-xl sm:text-2xl font-black border-4 border-amber-600 shadow-xl flex items-center justify-center gap-2 py-4">
+              <span>🟡</span>
+              <span>+1 Stik Satuan</span>
+            </button>
+
+            <button onclick="window.ifpGame.catchResetBasket()" class="btn-fun ifp-touch-btn bg-slate-100 hover:bg-slate-200 text-gray-700 rounded-3xl text-base sm:text-lg font-black border-2 border-slate-300 shadow-md flex items-center justify-center gap-2 py-4">
+              <span>🗑️</span>
+              <span>Kosongkan Keranjang</span>
+            </button>
+          </div>
+
+          <div class="flex justify-center pt-2">
+            <button onclick="window.ifpGame.startCatchGame()" class="btn-fun bg-indigo-600 hover:bg-indigo-700 text-white font-black px-6 py-2.5 rounded-2xl text-xs sm:text-sm flex items-center gap-2 shadow">
+              <span>🔄</span>
+              <span>Mulai Ulang Ronde Arcade</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =========================================================================
+           PANEL 3: RODA PUTAR KEBERUNTUNGAN STEAM & KOPERASI (LUCKY WHEEL IFP)
+           ========================================================================= -->
+      <div id="ifp-panel-wheel" class="hidden space-y-6">
+        <div class="card-kid p-6 bg-white border-4 border-purple-200 text-center shadow-lg space-y-5">
+          <div>
+            <span class="text-xs font-black uppercase text-purple-600 tracking-wider bg-purple-50 px-3.5 py-1 rounded-full border border-purple-200 inline-block mb-2">
+              Giliran Siswa Maju ke Layar Sentuh
+            </span>
+            <h3 class="text-xl sm:text-3xl font-black text-gray-800 font-heading">
+              Roda Putar Keberuntungan STEAM & Koperasi
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-500 mt-1">
+              Sentuh tombol putar di bawah, jarum penunjuk merah di sisi kanan akan memilih tantangan untuk siswa atau kelompok yang maju!
+            </p>
+          </div>
+
+          <!-- Wadah Canvas Roda + Pointer Penunjuk -->
+          <div class="flex justify-center py-4">
+            <div class="ifp-wheel-wrapper">
+              <canvas id="ifp-wheel-canvas" width="380" height="380" class="max-w-full drop-shadow-xl rounded-full"></canvas>
+              <div class="ifp-wheel-pointer"></div>
+            </div>
+          </div>
+
+          <!-- Tombol Putar Raksasa -->
+          <div class="flex justify-center">
+            <button onclick="window.ifpGame.spinWheel()" class="btn-fun ifp-touch-btn bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white font-black text-xl sm:text-2xl px-10 py-5 rounded-3xl shadow-2xl border-4 border-white animate-pulse-gentle">
+              <span>🎡</span>
+              <span>PUTAR RODA KEBERUNTUNGAN!</span>
+            </button>
+          </div>
+
+          <!-- Modal Pop-up Hasil Roda Putar -->
+          <div id="ifp-wheel-result-modal" class="hidden p-6 bg-purple-50 border-4 border-purple-400 rounded-3xl max-w-xl mx-auto space-y-3 shadow-xl animate-scale-in">
+            <span class="text-xs font-black uppercase text-purple-700 tracking-widest bg-white px-3 py-1 rounded-full shadow-xs">
+              🎉 Tantangan Terpilih Untukmu!
+            </span>
+            <h4 id="ifp-wheel-result-title" class="text-xl sm:text-2xl font-black text-purple-900 font-heading">
+              Bonus 3 Bintang Emas ⭐
+            </h4>
+            <p id="ifp-wheel-result-desc" class="text-sm sm:text-base text-gray-700 font-medium">
+              Sebutkan kalimat matematika untuk membeli 2 ikat puluhan stik di koperasi!
+            </p>
+            <div class="pt-2">
+              <button onclick="document.getElementById('ifp-wheel-result-modal').classList.add('hidden')" class="btn-fun bg-purple-600 hover:bg-purple-700 text-white font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow">
+                Siap Melaksanakan! 👍
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         TAB 5: RUANG GURU, LKPD CETAK & SERTIFIKAT PRESTASI
+         ========================================================================= -->
+    <section id="tab-teacher" class="tab-content-panel hidden space-y-8">
+      
+      <!-- Navigasi Sub-Tab Ruang Guru -->
+      <div class="flex items-center gap-2 border-b border-gray-200 pb-3 flex-wrap">
+        <button class="teacher-subtab-btn active px-4 py-2 rounded-xl text-xs font-black bg-indigo-600 text-white" data-target="teacher-modul-container">
+          📘 Modul Ajar Deep Learning
+        </button>
+        <button class="teacher-subtab-btn px-4 py-2 rounded-xl text-xs font-black bg-slate-100 text-gray-700 hover:bg-slate-200" data-target="lkpd-container">
+          📝 LKPD Siap Cetak A4
+        </button>
+        <button class="teacher-subtab-btn px-4 py-2 rounded-xl text-xs font-black bg-slate-100 text-gray-700 hover:bg-slate-200" data-target="certificate-container">
+          🏆 Generator Sertifikat Siswa
+        </button>
+      </div>
+
+      <!-- Wadah Modul Ajar Deep Learning Guru -->
+      <div id="teacher-modul-container">
+        <!-- Rendered via teacher-modul.js -->
+      </div>
+
+      <!-- Wadah LKPD Siap Cetak A4 -->
+      <div id="lkpd-container" class="hidden">
+        <!-- Rendered via teacher-modul.js -->
+      </div>
+
+      <!-- Wadah Generator Sertifikat Bintang -->
+      <div id="certificate-container" class="hidden">
+        <!-- Rendered via teacher-modul.js -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FLOATING QUICK 3D INSPECTOR BUTTON (PUTAR 360° DARI MANA SAJA) -->
+  <button id="btn-quick-3d-float" class="floating-3d-btn btn-fun bg-gradient-to-r from-amber-500 via-rose-500 to-indigo-600 text-white font-black px-4 py-3 rounded-2xl shadow-xl border-2 border-white flex items-center gap-2 text-xs sm:text-sm hover:scale-105 transition" title="Buka Tempat Pensil 3D Interaktif 360°">
+    <span class="text-xl">🔄</span>
+    <span>Putar 3D Tempat Pensil</span>
+  </button>
+
+  <!-- MODAL QUICK 3D OVERLAY -->
+  <div id="modal-quick-3d" class="fixed inset-0 z-50 modal-3d-backdrop hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-5 max-w-xl w-full border-4 border-amber-300 shadow-2xl relative space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🪵</span>
+          <div>
+            <h3 class="font-black text-gray-800 text-base sm:text-lg font-heading">Tempat Pensil Stik Es Krim 3D</h3>
+            <p class="text-[11px] text-gray-500">Putar 360°, lihat alas kokoh & dinding interlocking!</p>
+          </div>
+        </div>
+        <button id="btn-close-quick-3d" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-rose-100 text-gray-600 hover:text-rose-600 font-black text-sm flex items-center justify-center transition">
+          ✕
+        </button>
+      </div>
+
+      <div class="text-xs text-amber-900 bg-amber-50 p-2.5 rounded-xl border border-amber-200 flex items-center gap-2">
+        <span>👆</span>
+        <span>Sentuh atau geser mouse untuk memutar 360° dari segala sudut!</span>
+      </div>
+
+      <!-- 3D Canvas Box di Modal -->
+      <div id="quick-3d-canvas-container" class="w-full h-64 sm:h-72 bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 shadow-inner">
+        <!-- Three.js Canvas di-mount di sini -->
+      </div>
+
+      <div class="flex items-center justify-between gap-2 flex-wrap pt-1">
+        <div class="flex items-center gap-1.5">
+          <button id="btn-modal-rotate-toggle" class="btn-fun bg-slate-100 hover:bg-slate-200 text-gray-700 text-xs font-black px-3 py-1.5 rounded-xl">
+            🔄 Putar Otomatis
+          </button>
+          <button id="btn-modal-reset-cam" class="btn-fun bg-slate-100 hover:bg-slate-200 text-gray-700 text-xs font-black px-3 py-1.5 rounded-xl">
+            🎯 Reset Sudut
+          </button>
+        </div>
+        <button id="btn-modal-go-studio" class="btn-fun bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black px-3.5 py-1.5 rounded-xl shadow">
+          Buka Studio 3D Lengkap ➔
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-gray-500 space-y-2">
+    <p class="font-bold text-gray-700">
+      KREASI STIK PINTAR • Platform Pembelajaran Mendalam (Deep Learning) Kurikulum Merdeka Fase A Kelas 2 SD
+    </p>
+    <p>
+      Integrasi Matematika Penjumlahan, Kolaborasi Koperasi Sekolah, Literasi Bahasa Indonesia, dan Proyek STEAM Tempat Pensil Stik Es Krim • 100% Aset Bebas Royalti
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/model3d.js"></script>
+  <script src="assets/js/story-engine.js"></script>
+  <script src="assets/js/math-engine.js"></script>
+  <script src="assets/js/cooperative-game.js"></script>
+  <script src="assets/js/ifp-games.js"></script>
+  <script src="assets/js/stem-kka.js"></script>
+  <script src="assets/js/teacher-modul.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <!-- Service Worker PWA Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => {
+          console.log('SW registration note: running in direct mode', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
