@@ -1,0 +1,599 @@
+/* ==========================================================================
+   KREASI STIK PINTAR - Style Sheet Ceria Ramah Anak & Edukasi Modern
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --primary: #FF6B6B;
+  --primary-hover: #EE5253;
+  --secondary: #48DBFB;
+  --secondary-hover: #0ABDE3;
+  --accent: #FECA57;
+  --accent-hover: #FF9F43;
+  --success: #1DD1A1;
+  --success-hover: #10AC84;
+  --purple: #5F27CD;
+  --dark: #222F3E;
+  --light-bg: #F7FBFD;
+  --card-bg: #FFFFFF;
+  --wood-color: #D29962;
+  --wood-shadow: #A66E38;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark);
+  overflow-x: hidden;
+  user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Fredoka', cursive, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Animasi Bouncing Ceria */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes float-spin {
+  0% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-5px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite ease-in-out;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: float-spin 4s infinite ease-in-out;
+}
+
+/* Tombol Kartun 3D yang Menyenangkan */
+.btn-fun {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.18);
+  position: relative;
+  top: 0;
+}
+
+.btn-fun:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 rgba(0,0,0,0.22);
+}
+
+.btn-fun:active {
+  top: 4px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.18);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border-bottom: 5px solid #d63031;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: #013243;
+  border-bottom: 5px solid #0abde3;
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: white;
+  border-bottom: 5px solid #10ac84;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: #5c3c00;
+  border-bottom: 5px solid #ff9f43;
+}
+
+.btn-purple {
+  background-color: var(--purple);
+  color: white;
+  border-bottom: 5px solid #341f97;
+}
+
+/* Kartu Pembelajaran Ramah Anak */
+.card-kid {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  border: 3px solid #F1F2F6;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-kid:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tab Navigasi Khusus */
+.nav-tab-btn {
+  border-radius: 9999px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.nav-tab-btn.active {
+  background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.nav-tab-btn:not(.active) {
+  color: #576574;
+  background-color: #EEF2F7;
+}
+
+.nav-tab-btn:not(.active):hover {
+  background-color: #DFE4EA;
+  color: #222F3E;
+}
+
+/* Wadah Kanvas 3D */
+#canvas3d-container {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: radial-gradient(circle at center, #ffffff 0%, #edf6f9 100%);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 4px solid #E4E9F2;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+}
+
+#canvas3d-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+/* Stik Es Krim Mini UI Representasi */
+.stick-bundle {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 8px;
+  background: #FFF2DF;
+  border: 2px dashed #E58E26;
+  border-radius: 12px;
+  margin: 4px;
+}
+
+.stick-unit {
+  width: 6px;
+  height: 38px;
+  background: linear-gradient(to right, #D29962, #F3C68F, #D29962);
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.stick-bundle-ten {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 12px;
+  background: #FFEAA7;
+  border: 3px solid #FDCB6E;
+  border-radius: 16px;
+  position: relative;
+}
+
+.stick-bundle-ten::after {
+  content: "10 Stik (1 Puluhan)";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 800;
+  color: #D35400;
+  white-space: nowrap;
+}
+
+/* KKA Koding Algoritma Blocks */
+.code-block {
+  cursor: grab;
+  user-select: none;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 700;
+  border-left: 8px solid;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.code-block:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.code-block:active {
+  cursor: grabbing;
+}
+
+.code-step-1 { background-color: #E8F8F5; border-color: #1ABC9C; color: #0E6251; }
+.code-step-2 { background-color: #FEF9E7; border-color: #F1C40F; color: #7D6608; }
+.code-step-3 { background-color: #EAF2F8; border-color: #3498DB; color: #1B4F72; }
+.code-step-4 { background-color: #FDEDEC; border-color: #E74C3C; color: #78281F; }
+.code-step-5 { background-color: #F4ECF7; border-color: #9B59B6; color: #512E5F; }
+
+/* Slot Penampung Algoritma */
+.drop-slot {
+  min-height: 64px;
+  border: 3px dashed #CBD5E1;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F8FAFC;
+  transition: all 0.2s;
+}
+
+.drop-slot.drag-over {
+  border-color: #3B82F6;
+  background-color: #EFF6FF;
+  transform: scale(1.01);
+}
+
+/* Papan Nilai Tempat (Place Value Board) */
+.place-value-col {
+  border-radius: 1rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.col-tens {
+  background: #E0F2FE;
+  border: 3px solid #7DD3FC;
+}
+
+.col-ones {
+  background: #FEF3C7;
+  border: 3px solid #FDE68A;
+}
+
+/* Highlight Narasi Suara */
+.reading-highlight {
+  background-color: #FEF08A;
+  color: #854D0E;
+  padding: 2px 6px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(254, 240, 138, 0.8);
+}
+
+/* ==========================================================================
+   GAYA PETUALANGAN SOAL CERITA (STORY QUEST) & PEMBELAJARAN MENDALAM
+   ========================================================================== */
+
+/* Bubble Dialog Karakter Kartun */
+.speech-bubble {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 1.5rem;
+  border: 3px solid #E2E8F0;
+  box-shadow: 0 8px 16px -4px rgba(0,0,0,0.06);
+}
+
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  bottom: -16px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 16px 14px 0 14px;
+  border-color: #E2E8F0 transparent transparent transparent;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  bottom: -12px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 12px 0 12px;
+  border-color: #FFFFFF transparent transparent transparent;
+}
+
+/* Penanda Kata Kunci (Diketahui & Ditanyakan) */
+.highlight-known-badge {
+  background-color: #FEF3C7;
+  color: #92400E;
+  border: 2px solid #F59E0B;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: 800;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+}
+
+.highlight-ask-badge {
+  background-color: #E0F2FE;
+  color: #0369A1;
+  border: 2px solid #0284C7;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: 800;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
+}
+
+/* Meja Kerja Manipulatif Stik Kayu */
+.workbench-mat {
+  background: radial-gradient(circle at center, #FDF8F0 0%, #F5ECE0 100%);
+  border: 4px solid #D29962;
+  border-radius: 1.5rem;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.stick-basket-box {
+  background: white;
+  border: 3px dashed #CBD5E1;
+  border-radius: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.stick-basket-box.active-basket {
+  border-color: #6366F1;
+  background-color: #F8FAFC;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
+}
+
+/* Stik Es Krim Mini Lucu */
+.mini-stick {
+  width: 14px;
+  height: 52px;
+  background: linear-gradient(to right, #E8B983, #D49D64);
+  border-radius: 6px;
+  border: 1.5px solid #A66E38;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.15);
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.mini-stick:hover {
+  transform: translateY(-4px) rotate(2deg);
+}
+
+.mini-stick-colored {
+  background: linear-gradient(to right, #60A5FA, #3B82F6);
+  border-color: #1D4ED8;
+}
+
+.mini-stick-yellow {
+  background: linear-gradient(to right, #FCD34D, #F59E0B);
+  border-color: #B45309;
+}
+
+/* Bundel 10 Stik dengan Pita Merah */
+.mini-bundle-ten {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 4px;
+  background: rgba(210, 153, 98, 0.15);
+  border-radius: 8px;
+  border: 1px dashed #A66E38;
+}
+
+.mini-bundle-ten::after {
+  content: '10';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #EF4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 1px 5px;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  z-index: 5;
+}
+
+/* Kartu Galeri Gambar Bebas Royalti */
+.craft-gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.craft-gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -3px rgba(0,0,0,0.15);
+}
+
+.craft-gallery-card img {
+  transition: transform 0.4s ease;
+}
+
+.craft-gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Gaya Cetak / Print untuk LKPD & Modul Guru */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  header, nav, #canvas3d-container, .no-print, .btn-fun, footer {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-page {
+    page-break-after: always;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+/* Scrollbar Ceria */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F2F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8D6E5;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8395A7;
+}
+
+/* --- TOKO KOPERASI CILIK STYLING --- */
+.awning-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    #ef4444,
+    #ef4444 20px,
+    #ffffff 20px,
+    #ffffff 40px
+  );
+}
+
+.cashier-lcd {
+  font-family: 'Courier New', monospace;
+  background-color: #0f172a;
+  color: #22c55e;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  letter-spacing: 2px;
+}
+
+.keypad-btn {
+  background: #ffffff;
+  color: #1e293b;
+  font-weight: 900;
+  border-radius: 1rem;
+  box-shadow: 0 4px 0 #cbd5e1;
+  transition: all 0.1s ease;
+  user-select: none;
+}
+
+.keypad-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #94a3b8;
+}
+
+.keypad-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #cbd5e1;
+}
+
+.shop-shelf-item {
+  background: #ffffff;
+  border: 2px solid #fed7aa;
+  border-radius: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.shop-shelf-item:hover {
+  border-color: #f97316;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.15);
+}
+
+/* Floating 3D Quick Viewer Button & Modal */
+.floating-3d-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 60;
+  animation: pulse-gentle 2.5s infinite;
+}
+
+.modal-3d-backdrop {
+  backdrop-filter: blur(6px);
+  background: rgba(15, 23, 42, 0.65);
+}
+
+/* ==========================================================================
+   IFP (INTERACTIVE FLAT PANEL / SMART BOARD) STYLES
+   ========================================================================== */
+.ifp-touch-btn {
+  min-height: 80px;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: 'Fredoka', cursive, sans-serif;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ifp-duel-container {
+  touch-action: manipulation;
+}
+
+.ifp-wheel-wrapper {
+  position: relative;
+  display: inline-block;
+  touch-action: none;
+}
+
+.ifp-wheel-pointer {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-right: 32px solid #ef4444;
+  filter: drop-shadow(-3px 2px 4px rgba(0,0,0,0.3));
+  z-index: 10;
+}
+

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-glow-tammy" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </radialGradient>
+    <linearGradient id="blazer-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#0F766E"/>
+    </linearGradient>
+    <linearGradient id="skin-tammy" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FED7AA"/>
+      <stop offset="100%" stop-color="#FDBA74"/>
+    </linearGradient>
+    <linearGradient id="hair-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350F"/>
+      <stop offset="100%" stop-color="#451A03"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Lingkaran Latar Belakang -->
+  <circle cx="100" cy="100" r="92" fill="url(#bg-glow-tammy)" stroke="#F59E0B" stroke-width="4"/>
+
+  <!-- Badan / Blazer Koperasi Ms. Tammy (Toska Elegan & Ramah) -->
+  <path d="M40 185 C40 145 60 135 100 135 C140 135 160 145 160 185 Z" fill="#F43F5E"/>
+  
+  <!-- Kemeja Putih Berkerah Halus -->
+  <path d="M82 135 L100 162 L118 135 Z" fill="#FFFFFF"/>
+  <circle cx="100" cy="172" r="2.5" fill="#CBD5E1"/>
+
+  <!-- Blazer / Rompi Koperasi Toska Hijau -->
+  <path d="M45 185 C45 148 65 138 86 138 L92 185 Z" fill="url(#blazer-grad)"/>
+  <path d="M155 185 C155 148 135 138 114 138 L108 185 Z" fill="url(#blazer-grad)"/>
+
+  <!-- Lencana Koperasi Sekolah (Ms. Tammy) -->
+  <rect x="62" y="152" width="18" height="12" rx="3" fill="#FBBF24" stroke="#D97706" stroke-width="1"/>
+  <text x="71" y="161" font-size="6" font-family="'Nunito', sans-serif" font-weight="900" fill="#78350F" text-anchor="middle">TAMMY</text>
+
+  <!-- Leher -->
+  <rect x="88" y="115" width="24" height="22" rx="4" fill="#FDBA74"/>
+
+  <!-- Kalung Mutiara Sederhana -->
+  <path d="M88 132 Q100 140 112 132" fill="none" stroke="#FDE047" stroke-width="2.5" stroke-dasharray="3,2"/>
+
+  <!-- Rambut Belakang -->
+  <ellipse cx="100" cy="92" rx="44" ry="46" fill="url(#hair-grad)"/>
+
+  <!-- Kepala & Wajah Manis Ms. Tammy -->
+  <ellipse cx="100" cy="90" rx="35" ry="38" fill="url(#skin-tammy)"/>
+
+  <!-- Telinga & Anting Mutiara Cantik -->
+  <circle cx="65" cy="92" r="8" fill="#FDBA74"/>
+  <circle cx="64" cy="97" r="3" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="135" cy="92" r="8" fill="#FDBA74"/>
+  <circle cx="136" cy="97" r="3" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Rambut Depan Bergaya Anggun (Poni & Ikal Samping) -->
+  <path d="M65 78 C65 48 80 40 100 40 C120 40 135 48 135 78 C128 60 115 54 100 54 C85 54 72 60 65 78 Z" fill="url(#hair-grad)"/>
+  <path d="M65 75 Q75 60 95 62 Q75 75 68 95 Z" fill="url(#hair-grad)"/>
+  <path d="M135 75 Q125 60 105 62 Q125 75 132 95 Z" fill="url(#hair-grad)"/>
+
+  <!-- Alis Rapi & Ramah -->
+  <path d="M78 74 Q86 69 92 73" stroke="#52250A" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M108 73 Q114 69 122 74" stroke="#52250A" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Kacamata Elegan Modern (Warna Merah Marun) -->
+  <circle cx="84" cy="84" r="12" fill="#E0F2FE" fill-opacity="0.5" stroke="#991B1B" stroke-width="2.5"/>
+  <circle cx="116" cy="84" r="12" fill="#E0F2FE" fill-opacity="0.5" stroke="#991B1B" stroke-width="2.5"/>
+  <line x1="96" y1="84" x2="104" y2="84" stroke="#991B1B" stroke-width="2.5"/>
+  <line x1="72" y1="82" x2="65" y2="83" stroke="#991B1B" stroke-width="2"/>
+  <line x1="128" y1="82" x2="135" y2="83" stroke="#991B1B" stroke-width="2"/>
+
+  <!-- Mata Berbinar Ramah -->
+  <circle cx="84" cy="84" r="4.5" fill="#1F2937"/>
+  <circle cx="82.5" cy="82.5" r="1.5" fill="#FFFFFF"/>
+  <circle cx="116" cy="84" r="4.5" fill="#1F2937"/>
+  <circle cx="114.5" cy="82.5" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Hidung Kecil Manis -->
+  <path d="M98 92 Q100 96 103 94" stroke="#EA580C" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Senyum Hangat Penuh Kasih Sayang Guru -->
+  <path d="M86 103 Q100 118 114 103" fill="#DC2626" stroke="#991B1B" stroke-width="2"/>
+  <path d="M90 104 Q100 111 110 104" fill="#FFFFFF"/> <!-- Gigi Putih -->
+
+  <!-- Pipi Merona Ceria -->
+  <ellipse cx="74" cy="95" rx="5" ry="3" fill="#FB7185" opacity="0.6"/>
+  <ellipse cx="126" cy="95" rx="5" ry="3" fill="#FB7185" opacity="0.6"/>
+
+  <!-- Tangan Memegang Stik Es Krim Pelangi -->
+  <g transform="translate(142, 108) rotate(15)">
+    <rect x="-4" y="-25" width="8" height="40" rx="3" fill="#FBBF24" stroke="#D97706" stroke-width="1"/>
+    <circle cx="0" cy="10" r="11" fill="#FDBA74"/>
+  </g>
+</svg>
